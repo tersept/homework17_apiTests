@@ -1,6 +1,7 @@
 package apitests;
 
 import io.restassured.http.ContentType;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -13,6 +14,7 @@ public class ReqresInTests {
     RegSuc email = new RegSuc("eve.holt@reqres.in", "pistol");
 
 
+    @DisplayName("Тест на успешное создание пользователя")
     @Test
     void createTest() {
         given()
@@ -31,6 +33,7 @@ public class ReqresInTests {
                 );
     }
 
+    @DisplayName("Тест на не успешное создание пользователя при пустом body")
     @Test
     void createEmptyBodyTest() {
         given()
@@ -40,6 +43,7 @@ public class ReqresInTests {
                 .statusCode(415);
     }
 
+    @DisplayName("Тест на не успешное удаление пользователя")
     @Test
     void deleteTest() {
         given()
@@ -49,6 +53,7 @@ public class ReqresInTests {
                 .statusCode(204);
     }
 
+    @DisplayName("Тест на не успешноую регистрацию")
     @Test
     void registerSuccessfulTest() {
 
