@@ -1,6 +1,5 @@
-package apiTests;
+package apitests;
 
-import groovyjarjarantlr4.v4.codegen.model.SrcOp;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 

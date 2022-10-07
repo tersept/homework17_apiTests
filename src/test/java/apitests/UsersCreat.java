@@ -1,4 +1,4 @@
-package apiTests;
+package apitests;
 
 public class UsersCreat {
     private String name;
