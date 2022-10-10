@@ -1,17 +1,17 @@
 package apitests;
 
-public class UsersCreat {
+public class UserNameJobData {
     private String name;
     private String job;
 
 
-    public UsersCreat(String name, String job) {
+    public UserNameJobData(String name, String job) {
         this.name = name;
         this.job = job;
     }
 
 
-    public UsersCreat setName(String name) {
+    public UserNameJobData setName(String name) {
         this.name = name;
         return this;
     }

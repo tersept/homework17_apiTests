@@ -1,11 +1,11 @@
 package apitests;
 
-public class RegSuc{
+public class UserEmailData {
 
     private String email;
     private String password;
 
-    public  RegSuc(String email, String password) {
+    public UserEmailData(String email, String password) {
        this.email = email;
        this.password = password;
     }
