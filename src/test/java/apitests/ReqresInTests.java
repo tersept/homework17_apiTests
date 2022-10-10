@@ -8,8 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
@@ -34,11 +33,12 @@ public class ReqresInTests {
                 .when()
                 .post("/users")
                 .then()
+                .log().all()
                 .statusCode(201)
                 .body(
                         "name", is(user.getName()),
                         "job", is(user.getJob()),
-                        "id", notNullValue(),
+                        "id", is(not(emptyOrNullString())),
                         "createdAt", notNullValue()
                 );
     }
@@ -50,6 +50,7 @@ public class ReqresInTests {
                 .when()
                 .post("/users")
                 .then()
+                .log().all()
                 .statusCode(415);
     }
 
@@ -60,6 +61,7 @@ public class ReqresInTests {
                 .when()
                 .delete("/users/2")
                 .then()
+                .log().all()
                 .statusCode(204);
     }
 
@@ -73,6 +75,7 @@ public class ReqresInTests {
                 .when()
                 .post("/register")
                 .then()
+                .log().all()
                 .statusCode(200)
                 .body(
                         "id", notNullValue(),
@@ -88,6 +91,7 @@ public class ReqresInTests {
                 .when()
                 .post("/register")
                 .then()
+                .log().all()
                 .statusCode(400)
                 .body(
                         "error", is("Missing email or username")
