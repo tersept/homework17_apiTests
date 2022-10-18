@@ -1,9 +1,9 @@
 package models.lombok;
 
 import lombok.Data;
+@Data
 
 public class CreatUserResponseLombokModel {
-  //  @Data
     private String name,
             job,
             id,

@@ -2,9 +2,12 @@ package models.lombok;
 
 import lombok.Data;
 
+@Data
 public class CreateUserBodyLombokModel {
 
-    //@Data
     private String name,
-            job;
+            job,
+            email,
+            password;
+
 }
